@@ -85,3 +85,7 @@ theme = "loveit"
           identifier = "certtool"
           name = "certtool"
           url = "/certtool"
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
