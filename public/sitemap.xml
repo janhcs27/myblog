@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>//localhost:1313/</loc>
+  </url><url>
+    <loc>//localhost:1313/certtool/test4/</loc>
+  </url><url>
+    <loc>//localhost:1313/home/home/</loc>
+  </url><url>
+    <loc>//localhost:1313/posts/commands/</loc>
+  </url><url>
+    <loc>//localhost:1313/posts/erster-post/</loc>
+  </url><url>
+    <loc>//localhost:1313/posts/mega-skript/</loc>
+  </url><url>
+    <loc>//localhost:1313/categories/</loc>
+  </url><url>
+    <loc>//localhost:1313/certtool/</loc>
+  </url><url>
+    <loc>//localhost:1313/home/</loc>
+  </url><url>
+    <loc>//localhost:1313/posts/</loc>
+  </url><url>
+    <loc>//localhost:1313/tags/</loc>
+  </url>
+</urlset>

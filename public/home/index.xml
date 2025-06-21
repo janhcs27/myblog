@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Homes on </title>
+    <link>//localhost:1313/home/</link>
+    <description>Recent content in Homes on </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="//localhost:1313/home/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>//localhost:1313/home/home/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/home/home/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Willkommen auf meinem IT-Blog – Lösungen, die funktionieren.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Ob fehlerhafte Gruppenrichtlinien, hartnäckige Probleme mit Microsoft Intune, Performancefragen unter macOS oder ungeklärte Warnungen in Server-Eye – in der IT gibt es selten Stillstand, aber oft viele Fragen.&lt;/p&gt;&#xA;&lt;p&gt;Dieser Blog ist für alle, die in der IT Verantwortung tragen – Admins, Techniker, oder ambitionierte IT-Enthusiasten. Hier findest du praxisnahe Lösungen, klare Anleitungen und hilfreiche Workarounds für alltägliche (und weniger alltägliche) IT-Probleme rund um Windows, macOS, Intune, Server-Eye und mehr.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eingabeformular</title>
+</head>
+<body>
+    <h1>Eingabeformular</h1>
+    
+    <form id="inputForm">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="organization">Organisation:</label><br>
+        <input type="text" id="organization" name="organization"><br><br>
+
+        <label for="city">Stadt:</label><br>
+        <input type="text" id="city" name="city"><br><br>
+
+        <label for="state">Bundesland:</label><br>
+        <input type="text" id="state" name="state"><br><br>
+
+        <label for="country">Land:</label><br>
+        <input type="text" id="country" name="country"><br><br>
+
+        <textarea id="info" rows="6" cols="50"></textarea><br>
+
+        <button type="button" onclick="displayInfo()">Befehl erzeugen</button>
+        <button type="button" onclick="copyToClipboard()">In Zwischenablage kopieren</button>
+    </form>
+
+    
+
+    <script>
+        function displayInfo() {
+            const name = document.getElementById('name').value;
+            const organization = document.getElementById('organization').value;
+            const city = document.getElementById('city').value;
+            const state = document.getElementById('state').value;
+            const country = document.getElementById('country').value;
+            const path_openssl = document.getElementById('path_openssl').value;
+
+            const info = `${path_openssl} req -new -newkey rsa:2048 -sha256 -nodes -out "/Users/janschmitz/certs/${name}.csr" -keyout "/Users/janschmitz/certs/${name}.key" -subj "/C=${country}/ST=${state}/L=${city}/O=${organization}/CN=${name}"`;
+            
+            document.getElementById('info').value = info;
+        }
+
+        function copyToClipboard() {
+            const infoText = document.getElementById('info');
+            infoText.select();
+            document.execCommand('copy');
+        }
+    </script>
+
+<h1>Textdateien erstellen und speichern</h1>
+    
+<form id="textFileForm">
+    <label for="text1">CRT eingeben:</label><br>
+    <textarea id="text1" name="text1" rows="4" cols="50"></textarea><br><br>
+
+    <label for="text2">CA CRT eingeben:</label><br>
+    <textarea id="text2" name="text2" rows="4" cols="50"></textarea><br><br>
+    
+    <button type="button" onclick="saveCRTFile()">CRT speichern</button>
+    <button type="button" onclick="saveCACRTFile()">CA CRT speichern</button><br><br>
+    <button type="button" onclick="displayInfoPFX()">PFX befehl erstellen</button>
+    <button type="button" onclick="copyToClipboardPFX()">PFX kopieren</button><br><br>
+
+    <textarea id="PFX" rows="6" cols="50"></textarea><br>
+</form>
+
+<script>
+    function saveCRTFile() {
+        const textId = 'text1';
+        const name = 'name';
+
+        const text = document.getElementById(textId).value;
+        const filename = document.getElementById(name).value;
+
+        if (text.trim() === '') {
+            alert('Bitte gib den CRT ein.');
+            return;
+        }
+
+        if (name.trim() === '') {
+            alert('Bitte gib die Domain ein.');
+            return;
+        }
+
+        const blob = new Blob([text], { type: 'text/plain' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = filename + '.crt';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+
+    function saveCACRTFile() {
+        const textId = 'text2';
+        const name = 'name';
+
+        const text = document.getElementById(textId).value;
+        const filename = document.getElementById(name).value;
+
+        if (text.trim() === '') {
+            alert('Bitte gib den CA CRT ein.');
+            return;
+        }
+
+        if (name.trim() === '') {
+            alert('Bitte gib die Domain ein.');
+            return;
+        }
+
+        const blob = new Blob([text], { type: 'text/plain' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = filename + '_intermediate.crt';
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+
+    function displayInfoPFX() {
+            const name = document.getElementById('name').value;
+            const path_openssl = document.getElementById('path_openssl').value;
+            const path_cert = document.getElementById('Ablage_Zertifikate').value;
+
+            if (name.trim() === '') {
+            alert('Bitte gib die Domain ein.');
+            return;
+            }
+
+            const info = `${path_openssl} pkcs12 -export -out "${path_cert}/${name}.pfx" -inkey "${path_cert}/${name}.key" -in "${path_cert}/${name}.crt" -certfile "${path_cert}/${name}_Intermediate.crt"`;
+            
+            document.getElementById('PFX').value = info;
+        }
+
+        function copyToClipboardPFX() {
+            const infoText = document.getElementById('PFX');
+            infoText.select();
+            document.execCommand('copy');
+        }
+
+</script>
+
+<form id="inputForm">
+
+    <br><br><br><br>
+    <label for="path_openssl">Openssl:</label><br>
+    <input type="text" id="path_openssl" name="path_openssl" value="openssl"><br><br>
+
+    <label for="Ablage_Zertifikate">Ablage_Zertifikate:</label><br>
+    <input type="text" id="Ablage_Zertifikate" name="Ablage_Zertifikate" value="/Users/janschmitz/certs"><br><br>
+</form>
+</body>
+</html>
