@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Certtools on myblog</title>
+    <link>http://localhost:1313/certtool/</link>
+    <description>Recent content in Certtools on myblog</description>
+    <image>
+      <title>myblog</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.147.7</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/certtool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/certtool/test4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/certtool/test4/</guid>
+      <description>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Eingabeformular&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Eingabeformular&lt;/h1&gt;
+    
+    &lt;form id=&#34;inputForm&#34;&gt;
+        &lt;label for=&#34;name&#34;&gt;Name:&lt;/label&gt;&lt;br&gt;
+        &lt;input type=&#34;text&#34; id=&#34;name&#34; name=&#34;name&#34;&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;label for=&#34;organization&#34;&gt;Organisation:&lt;/label&gt;&lt;br&gt;
+        &lt;input type=&#34;text&#34; id=&#34;organization&#34; name=&#34;organization&#34;&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;label for=&#34;city&#34;&gt;Stadt:&lt;/label&gt;&lt;br&gt;
+        &lt;input type=&#34;text&#34; id=&#34;city&#34; name=&#34;city&#34;&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;label for=&#34;state&#34;&gt;Bundesland:&lt;/label&gt;&lt;br&gt;
+        &lt;input type=&#34;text&#34; id=&#34;state&#34; name=&#34;state&#34;&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;label for=&#34;country&#34;&gt;Land:&lt;/label&gt;&lt;br&gt;
+        &lt;input type=&#34;text&#34; id=&#34;country&#34; name=&#34;country&#34;&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;textarea id=&#34;info&#34; rows=&#34;6&#34; cols=&#34;50&#34;&gt;&lt;/textarea&gt;&lt;br&gt;
+
+        &lt;button type=&#34;button&#34; onclick=&#34;displayInfo()&#34;&gt;Befehl erzeugen&lt;/button&gt;
+        &lt;button type=&#34;button&#34; onclick=&#34;copyToClipboard()&#34;&gt;In Zwischenablage kopieren&lt;/button&gt;
+    &lt;/form&gt;
+
+    
+
+    &lt;script&gt;
+        function displayInfo() {
+            const name = document.getElementById(&#39;name&#39;).value;
+            const organization = document.getElementById(&#39;organization&#39;).value;
+            const city = document.getElementById(&#39;city&#39;).value;
+            const state = document.getElementById(&#39;state&#39;).value;
+            const country = document.getElementById(&#39;country&#39;).value;
+            const path_openssl = document.getElementById(&#39;path_openssl&#39;).value;
+
+            const info = `${path_openssl} req -new -newkey rsa:2048 -sha256 -nodes -out &#34;/Users/janschmitz/certs/${name}.csr&#34; -keyout &#34;/Users/janschmitz/certs/${name}.key&#34; -subj &#34;/C=${country}/ST=${state}/L=${city}/O=${organization}/CN=${name}&#34;`;
+            
+            document.getElementById(&#39;info&#39;).value = info;
+        }
+
+        function copyToClipboard() {
+            const infoText = document.getElementById(&#39;info&#39;);
+            infoText.select();
+            document.execCommand(&#39;copy&#39;);
+        }
+    &lt;/script&gt;
+
+&lt;h1&gt;Textdateien erstellen und speichern&lt;/h1&gt;
+    
+&lt;form id=&#34;textFileForm&#34;&gt;
+    &lt;label for=&#34;text1&#34;&gt;CRT eingeben:&lt;/label&gt;&lt;br&gt;
+    &lt;textarea id=&#34;text1&#34; name=&#34;text1&#34; rows=&#34;4&#34; cols=&#34;50&#34;&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+
+    &lt;label for=&#34;text2&#34;&gt;CA CRT eingeben:&lt;/label&gt;&lt;br&gt;
+    &lt;textarea id=&#34;text2&#34; name=&#34;text2&#34; rows=&#34;4&#34; cols=&#34;50&#34;&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+    
+    &lt;button type=&#34;button&#34; onclick=&#34;saveCRTFile()&#34;&gt;CRT speichern&lt;/button&gt;
+    &lt;button type=&#34;button&#34; onclick=&#34;saveCACRTFile()&#34;&gt;CA CRT speichern&lt;/button&gt;&lt;br&gt;&lt;br&gt;
+    &lt;button type=&#34;button&#34; onclick=&#34;displayInfoPFX()&#34;&gt;PFX befehl erstellen&lt;/button&gt;
+    &lt;button type=&#34;button&#34; onclick=&#34;copyToClipboardPFX()&#34;&gt;PFX kopieren&lt;/button&gt;&lt;br&gt;&lt;br&gt;
+
+    &lt;textarea id=&#34;PFX&#34; rows=&#34;6&#34; cols=&#34;50&#34;&gt;&lt;/textarea&gt;&lt;br&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+    function saveCRTFile() {
+        const textId = &#39;text1&#39;;
+        const name = &#39;name&#39;;
+
+        const text = document.getElementById(textId).value;
+        const filename = document.getElementById(name).value;
+
+        if (text.trim() === &#39;&#39;) {
+            alert(&#39;Bitte gib den CRT ein.&#39;);
+            return;
+        }
+
+        if (name.trim() === &#39;&#39;) {
+            alert(&#39;Bitte gib die Domain ein.&#39;);
+            return;
+        }
+
+        const blob = new Blob([text], { type: &#39;text/plain&#39; });
+        const a = document.createElement(&#39;a&#39;);
+        a.href = URL.createObjectURL(blob);
+        a.download = filename + &#39;.crt&#39;;
+        a.style.display = &#39;none&#39;;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+
+    function saveCACRTFile() {
+        const textId = &#39;text2&#39;;
+        const name = &#39;name&#39;;
+
+        const text = document.getElementById(textId).value;
+        const filename = document.getElementById(name).value;
+
+        if (text.trim() === &#39;&#39;) {
+            alert(&#39;Bitte gib den CA CRT ein.&#39;);
+            return;
+        }
+
+        if (name.trim() === &#39;&#39;) {
+            alert(&#39;Bitte gib die Domain ein.&#39;);
+            return;
+        }
+
+        const blob = new Blob([text], { type: &#39;text/plain&#39; });
+        const a = document.createElement(&#39;a&#39;);
+        a.href = URL.createObjectURL(blob);
+        a.download = filename + &#39;_intermediate.crt&#39;;
+        a.style.display = &#39;none&#39;;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+
+    function displayInfoPFX() {
+            const name = document.getElementById(&#39;name&#39;).value;
+            const path_openssl = document.getElementById(&#39;path_openssl&#39;).value;
+            const path_cert = document.getElementById(&#39;Ablage_Zertifikate&#39;).value;
+
+            if (name.trim() === &#39;&#39;) {
+            alert(&#39;Bitte gib die Domain ein.&#39;);
+            return;
+            }
+
+            const info = `${path_openssl} pkcs12 -export -out &#34;${path_cert}/${name}.pfx&#34; -inkey &#34;${path_cert}/${name}.key&#34; -in &#34;${path_cert}/${name}.crt&#34; -certfile &#34;${path_cert}/${name}_Intermediate.crt&#34;`;
+            
+            document.getElementById(&#39;PFX&#39;).value = info;
+        }
+
+        function copyToClipboardPFX() {
+            const infoText = document.getElementById(&#39;PFX&#39;);
+            infoText.select();
+            document.execCommand(&#39;copy&#39;);
+        }
+
+&lt;/script&gt;
+
+&lt;form id=&#34;inputForm&#34;&gt;
+
+    &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+    &lt;label for=&#34;path_openssl&#34;&gt;Openssl:&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&#34;text&#34; id=&#34;path_openssl&#34; name=&#34;path_openssl&#34; value=&#34;openssl&#34;&gt;&lt;br&gt;&lt;br&gt;
+
+    &lt;label for=&#34;Ablage_Zertifikate&#34;&gt;Ablage_Zertifikate:&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&#34;text&#34; id=&#34;Ablage_Zertifikate&#34; name=&#34;Ablage_Zertifikate&#34; value=&#34;/Users/janschmitz/certs&#34;&gt;&lt;br&gt;&lt;br&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</description>
+    </item>
+  </channel>
+</rss>
