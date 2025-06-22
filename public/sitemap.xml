@@ -2,30 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/how-to/</loc>
+    <loc>https://examplesite.com/posts/how-to/</loc>
     <lastmod>2025-06-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hallowelt/</loc>
+    <loc>https://examplesite.com/tags/hallowelt/</loc>
     <lastmod>2025-06-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://examplesite.com/</loc>
     <lastmod>2025-06-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://examplesite.com/posts/</loc>
     <lastmod>2025-06-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://examplesite.com/tags/</loc>
     <lastmod>2025-06-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/test/</loc>
+    <loc>https://examplesite.com/tags/test/</loc>
     <lastmod>2025-06-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/commands/</loc>
+    <loc>https://examplesite.com/posts/commands/</loc>
   </url><url>
-    <loc>http://localhost:1313/posts/erster-post/</loc>
+    <loc>https://examplesite.com/posts/erster-post/</loc>
   </url><url>
-    <loc>http://localhost:1313/posts/mega-skript/</loc>
+    <loc>https://examplesite.com/posts/mega-skript/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://examplesite.com/categories/</loc>
   </url>
 </urlset>

@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>myblog</title>
-    <link>http://localhost:1313/</link>
+    <link>https://examplesite.com/</link>
     <description>Recent content on myblog</description>
     <image>
       <title>myblog</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://examplesite.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://examplesite.com/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.147.7</generator>
     <language>en</language>
     <lastBuildDate>Sat, 21 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://examplesite.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/how-to/</link>
+      <link>https://examplesite.com/posts/how-to/</link>
       <pubDate>Sat, 21 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/how-to/</guid>
+      <guid>https://examplesite.com/posts/how-to/</guid>
       <description>&lt;h1 id=&#34;test&#34;&gt;Test&lt;/h1&gt;
 &lt;h2 id=&#34;git-x-github&#34;&gt;Git x Github&lt;/h2&gt;
 &lt;p&gt;Zum Speichern unserer Websitedaten verwenden wir Github. Diese Plattform bietet uns eine zuverlässige und effiziente Möglichkeit, alle relevanten Dateien und Informationen zentral zu verwalten. Durch die Nutzung von GitHub können wir nicht nur den aktuellen Stand unserer Website sichern, sondern auch frühere Versionen nachvollziehen und bei Bedarf wiederherstellen. Darüber hinaus ermöglicht uns die Versionskontrolle, Änderungen nachzuvollziehen und im Team gemeinsam an der Weiterentwicklung der Website zu arbeiten.&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/commands/</link>
+      <link>https://examplesite.com/posts/commands/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/commands/</guid>
+      <guid>https://examplesite.com/posts/commands/</guid>
       <description>&lt;h1 id=&#34;dateien-synchronisieren&#34;&gt;Dateien Synchronisieren&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rsync -av --delete &amp;#34;/Users/janschmitz/Documents/Obsidian/Blog/Posts&amp;#34; &amp;#34;/Users/janschmitz/github_priv/myblog/content/Posts&amp;#34;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;hugo-server-starten&#34;&gt;Hugo Server starten&lt;/h1&gt;
@@ -37,17 +37,17 @@
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/erster-post/</link>
+      <link>https://examplesite.com/posts/erster-post/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/erster-post/</guid>
+      <guid>https://examplesite.com/posts/erster-post/</guid>
       <description>&lt;p&gt;#HalloWelt&lt;/p&gt;
 &lt;p&gt;Mein Erster Post auf meiner eigenen Seite&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/mega-skript/</link>
+      <link>https://examplesite.com/posts/mega-skript/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/mega-skript/</guid>
+      <guid>https://examplesite.com/posts/mega-skript/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash set -euo pipefail # Change to the script&amp;#39;s directory SCRIPT_DIR=&amp;#34;$(cd &amp;#34;$(dirname &amp;#34;${BASH_SOURCE[0]}&amp;#34;)&amp;#34; &amp;amp;&amp;amp; pwd)&amp;#34; cd &amp;#34;$SCRIPT_DIR&amp;#34; # Set variables for Obsidian to Hugo copy sourcePath=&amp;#34;/Users/path/to/obsidian/posts&amp;#34; destinationPath=&amp;#34;/Users/path/to/hugo/posts&amp;#34; # Set GitHub Repo myrepo=&amp;#34;reponame&amp;#34; # Check for required commands for cmd in git rsync python3 hugo; do if ! command -v $cmd &amp;amp;&amp;gt; /dev/null; then echo &amp;#34;$cmd is not installed or not in PATH.&amp;#34; exit 1 fi done # Step 1: Check if Git is initialized, and initialize if necessary if [ ! -d &amp;#34;.git&amp;#34; ]; then echo &amp;#34;Initializing Git repository...&amp;#34; git init git remote add origin $myrepo else echo &amp;#34;Git repository already initialized.&amp;#34; if ! git remote | grep -q &amp;#39;origin&amp;#39;; then echo &amp;#34;Adding remote origin...&amp;#34; git remote add origin $myrepo fi fi # Step 2: Sync posts from Obsidian to Hugo content folder using rsync echo &amp;#34;Syncing posts from Obsidian...&amp;#34; if [ ! -d &amp;#34;$sourcePath&amp;#34; ]; then echo &amp;#34;Source path does not exist: $sourcePath&amp;#34; exit 1 fi if [ ! -d &amp;#34;$destinationPath&amp;#34; ]; then echo &amp;#34;Destination path does not exist: $destinationPath&amp;#34; exit 1 fi rsync -av --delete &amp;#34;$sourcePath&amp;#34; &amp;#34;$destinationPath&amp;#34; # Step 3: Process Markdown files with Python script to handle image links echo &amp;#34;Processing image links in Markdown files...&amp;#34; if [ ! -f &amp;#34;images.py&amp;#34; ]; then echo &amp;#34;Python script images.py not found.&amp;#34; exit 1 fi if ! python3 images.py; then echo &amp;#34;Failed to process image links.&amp;#34; exit 1 fi # Step 4: Build the Hugo site echo &amp;#34;Building the Hugo site...&amp;#34; if ! hugo; then echo &amp;#34;Hugo build failed.&amp;#34; exit 1 fi # Step 5: Add changes to Git echo &amp;#34;Staging changes for Git...&amp;#34; if git diff --quiet &amp;amp;&amp;amp; git diff --cached --quiet; then echo &amp;#34;No changes to stage.&amp;#34; else git add . fi # Step 6: Commit changes with a dynamic message commit_message=&amp;#34;New Blog Post on $(date +&amp;#39;%Y-%m-%d %H:%M:%S&amp;#39;)&amp;#34; if git diff --cached --quiet; then echo &amp;#34;No changes to commit.&amp;#34; else echo &amp;#34;Committing changes...&amp;#34; git commit -m &amp;#34;$commit_message&amp;#34; fi # Step 7: Push all changes to the main branch echo &amp;#34;Deploying to GitHub Main...&amp;#34; if ! git push origin main; then echo &amp;#34;Failed to push to main branch.&amp;#34; exit 1 fi # Step 8: Push the public folder to the hostinger branch using subtree split and force push echo &amp;#34;Deploying to GitHub Hostinger...&amp;#34; if git branch --list | grep -q &amp;#39;hostinger-deploy&amp;#39;; then git branch -D hostinger-deploy fi if ! git subtree split --prefix public -b hostinger-deploy; then echo &amp;#34;Subtree split failed.&amp;#34; exit 1 fi if ! git push origin hostinger-deploy:hostinger --force; then echo &amp;#34;Failed to push to hostinger branch.&amp;#34; git branch -D hostinger-deploy exit 1 fi git branch -D hostinger-deploy echo &amp;#34;All done! Site synced, processed, committed, built, and deployed.&amp;#34;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
